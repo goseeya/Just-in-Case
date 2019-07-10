@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div>
+import Layout from './components/Layout/Layout';
+import CaseCreator from './containers/CaseCreator/CaseCreator';
 
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Layout>
+          <CaseCreator />
+        </Layout>
+      </div>
+    );
+  }
 }
 
 export default App;
