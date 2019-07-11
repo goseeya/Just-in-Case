@@ -1,0 +1,35 @@
+.Iphone6 {
+  height: 35%;
+  width: 10%;
+  background: linear-gradient(#ec1515, #e27b36);
+  border-radius: 20px;
+  box-shadow: inset -5px 0 #c15711;
+  margin: 2% auto;
+}
+
+.Iphone7 {
+  height: 35%;
+  width: 10%;
+  background: linear-gradient(#85e650, #abe236);
+  border-radius: 20px;
+  box-shadow: inset -5px 0 #073317;
+  margin: 2% auto;
+}
+
+.Iphone8 {
+  height: 35%;
+  width: 10%;
+  background: linear-gradient(#584af0, #0c113d);
+  border-radius: 20px;
+  box-shadow: inset -5px 0 #040d2e;
+  margin: 2% auto;
+}
+
+.Iphone9 {
+  height: 35%;
+  width: 10%;
+  background: linear-gradient(#6c142e, #e390c9);
+  border-radius: 20px;
+  box-shadow: inset -5px 0 #521e46;
+  margin: 2% auto;
+}

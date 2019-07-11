@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
 import Layout from './components/Layout/Layout';
-import CaseCreator from './containers/CaseCreator/CaseCreator';
+import IphoneCaseCreator from './containers/IphoneCaseCreator/IphoneCaseCreator';
 
 class App extends Component {
   render() {
     return (
       <div>
         <Layout>
-          <CaseCreator />
+          <IphoneCaseCreator />
         </Layout>
       </div>
     );

@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 
 import Aux from '../../hoc/Aux';
+import IphoneCase from '../../components/IphoneCase/IphoneCase';
 
-class CaseCreator extends Component {
+class IphoneCaseCreator extends Component {
   render() {
     return (
       <Aux>
-        <div>IphoneCase</div>
+        <IphoneCase />
         <div>Iphone type controls</div>
       </Aux>
     );
   }
 }
 
-export default CaseCreator;
+export default IphoneCaseCreator;
