@@ -1,0 +1,10 @@
+.IphoneCaseControls  {
+  width: 100%;
+  background-color: rgb(179, 153, 187);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  box-shadow: 0 2px 1px #8663bf;
+  margin: auto;
+  padding: 10px 0;
+}

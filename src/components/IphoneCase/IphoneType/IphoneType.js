@@ -8,16 +8,16 @@ class IphoneType extends Component {
     let type = null;
 
     switch (this.props.type) {
-      case ('Iphone6'):
+      case ('iPhone6'):
         type = <div className={styles.Iphone6}></div>;
         break;
-      case ('Iphone7'):
+      case ('iPhone7'):
         type = <div className={styles.Iphone7}></div>;
         break;
-      case ('Iphone8'):
+      case ('iPhone8'):
         type = <div className={styles.Iphone8}></div>;
         break;
-      case ('Iphone9'):
+      case ('iPhone9'):
         type = <div className={styles.Iphone9}></div>;
         break;
       default:
@@ -28,7 +28,7 @@ class IphoneType extends Component {
 };
 
 IphoneType.propTypes = {
-  type: PropTypes.string.isRequired
+  type: PropTypes.string
 }
 
 export default IphoneType;
