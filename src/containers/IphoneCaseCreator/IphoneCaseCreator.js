@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import Aux from '../../hoc/Aux';
 import IphoneCase from '../../components/IphoneCase/IphoneCase';
 import IphoneCaseControls from '../../components/IphoneCase/IphoneCaseControls/IphoneCaseControls';
+import Modal from '../../components/UI/Modal/Modal';
+import OrderSummary from '../../components/IphoneCase/OrderSummary/OrderSummary';
 
 const IPHONE_TYPE_PRICE = {
   iPhone6: 100,
@@ -35,6 +37,9 @@ class IphoneCaseCreator extends Component {
   render() {
     return (
       <Aux>
+      <Modal>
+        <OrderSummary type={this.state.type} />
+      </Modal>
         <IphoneCase type={this.state.type} />
         <IphoneCaseControls
           typeSelected={this.selectType}
