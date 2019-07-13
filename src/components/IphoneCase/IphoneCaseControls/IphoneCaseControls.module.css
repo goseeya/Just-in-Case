@@ -1,10 +1,51 @@
 .IphoneCaseControls  {
-  width: 100%;
-  background-color: rgb(179, 153, 187);
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  box-shadow: 0 2px 1px #8663bf;
-  margin: auto;
-  padding: 10px 0;
+    width: 100%;
+    background-color: rgb(179, 153, 187);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    box-shadow: 0 2px 1px #8663bf;
+    margin: auto;
+    padding: 10px 0;
+}
+
+.OrderButton {
+    background-color: #384bad;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #3fa3a6;
+    color: #def1ef;
+    font-family: inherit;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    box-shadow: 2px 2px 2px #130944;
+}
+
+.OrderButton:hover, .OrderButton:active {
+    background-color: #83328a;
+    border: 1px solid #4a0c42;
+    color: #e2d5e3;
+}
+
+.OrderButton:disabled {
+    background-color: #C7C6C6;
+    cursor: not-allowed;
+    border: 1px solid #ccc;
+    color: #888888;
+}
+
+.OrderButton:not(:disabled) {
+    animation: enable 0.3s linear;
+}
+
+@keyframes enable {
+    0% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

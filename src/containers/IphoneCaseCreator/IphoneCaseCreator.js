@@ -13,16 +13,23 @@ const IPHONE_TYPE_PRICE = {
 
 class IphoneCaseCreator extends Component {
   state = {
-    selectedType: 'iPhone6',
-    totalPrice: 100
+    type: 'iPhone6',
+    price: 100,
+    purchaseable: true
+  }
+
+  updatePurchaseState (type) {
+    const purchaseableModels = ['iPhone6', 'iPhone7', 'iPhone8'];
+    this.setState({ purchaseable: purchaseableModels.includes(type)});
   }
 
   selectType = (type) => {
     const newPrice = IPHONE_TYPE_PRICE[type];
     this.setState({
       type: type,
-      totalPrice: newPrice
+      price: newPrice
     })
+    this.updatePurchaseState(type);
   }
 
   render() {
@@ -32,6 +39,8 @@ class IphoneCaseCreator extends Component {
         <IphoneCaseControls
           typeSelected={this.selectType}
           checkedType={this.state.type}
+          price={this.state.price}
+          purchaseable={this.state.purchaseable}
            />
       </Aux>
     );
