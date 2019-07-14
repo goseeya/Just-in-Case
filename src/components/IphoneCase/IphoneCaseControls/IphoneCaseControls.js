@@ -13,20 +13,20 @@ const controls = [
 
 const iPhoneCaseControls = (props) => (
   <div className={styles.IphoneCaseControl}>
-  <p>Proce for the case: {props.price}</p>
-    {controls.map(ctrl => (
-      console.log(props.checkedType),
-      console.log(ctrl.type),
-      <IphoneCaseControl
-        key={ctrl.label}
-        label={ctrl.label}
-        selected={() => props.typeSelected(ctrl.type)}
-        checked={props.checkedType===ctrl.type}
-         />
-    ))}
-    <button
-      className={styles.OrderButton}
-      disabled={!props.purchaseable}>ORDER NOW</button>
+    <p>Price for the case: {props.price}</p>
+      {controls.map(ctrl => (
+        console.log(props.checkedType),
+        console.log(ctrl.type),
+        <IphoneCaseControl
+          key={ctrl.label}
+          label={ctrl.label}
+          selected={() => props.typeSelected(ctrl.type)}
+          checked={props.checkedType===ctrl.type}
+           />
+      ))}
+      <button
+        className={styles.OrderButton}
+        disabled={!props.purchaseable}>ORDER NOW</button>
   </div>
 );
 export default iPhoneCaseControls;
