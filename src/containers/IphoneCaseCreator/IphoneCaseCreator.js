@@ -43,11 +43,19 @@ class IphoneCaseCreator extends Component {
     this.setState({purchasing: false});
   }
 
+  purchaseContinueHandler = () => {
+    alert('You continue!');
+  }
+
   render() {
     return (
       <Aux>
       <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
-        <OrderSummary type={this.state.type} />
+        <OrderSummary
+          type={this.state.type}
+          price={this.state.price}
+          purchaseCanceled={this.purchaseCancelHandler}
+          purchaseContinued={this.purchaseContinueHandler} />
       </Modal>
         <IphoneCase type={this.state.type} />
         <IphoneCaseControls
