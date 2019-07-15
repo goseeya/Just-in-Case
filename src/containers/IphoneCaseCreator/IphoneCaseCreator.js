@@ -17,7 +17,8 @@ class IphoneCaseCreator extends Component {
   state = {
     type: 'iPhone6',
     price: 100,
-    purchaseable: true
+    purchaseable: true,
+    purchasing: false
   }
 
   updatePurchaseState (type) {
@@ -34,16 +35,21 @@ class IphoneCaseCreator extends Component {
     this.updatePurchaseState(type);
   }
 
+  purchaseHandler = () => {
+    this.setState({purchasing: true})
+  }
+
   render() {
     return (
       <Aux>
-      <Modal>
+      <Modal show={this.state.purchasing}>
         <OrderSummary type={this.state.type} />
       </Modal>
         <IphoneCase type={this.state.type} />
         <IphoneCaseControls
           typeSelected={this.selectType}
           checkedType={this.state.type}
+          ordered={this.purchaseHandler}
           price={this.state.price}
           purchaseable={this.state.purchaseable}
            />
