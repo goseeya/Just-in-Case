@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Aux from '../../hoc/Aux';
+import Aux from '../../hoc/Aux/Aux';
 import IphoneCase from '../../components/IphoneCase/IphoneCase';
 import IphoneCaseControls from '../../components/IphoneCase/IphoneCaseControls/IphoneCaseControls';
 import Modal from '../../components/UI/Modal/Modal';
