@@ -9,22 +9,22 @@
 }
 
 @media (min-width: 500px) and (min-height: 400px) {
-  .Case {
-    width: 300px;
+  .IphoneCase {
+    width: 200px;
     height: 400px;
   }
 }
 
 @media (min-width: 500) and (min-height: 401px) {
-  .Case {
-    width: 400px;
-    height: 500px;
+  .IphoneCase {
+    width: 300px;
+    height: 600px;
   }
 }
 
 @media (min-width: 1000px) and (min-height: 700px) {
-  .Case {
-    width: 600px;
-    height: 700px;
+  .IphoneCase {
+    width: 400px;
+    height: 800px;
   }
 }
