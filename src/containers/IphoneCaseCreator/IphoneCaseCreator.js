@@ -5,6 +5,7 @@ import IphoneCase from '../../components/IphoneCase/IphoneCase';
 import IphoneCaseControls from '../../components/IphoneCase/IphoneCaseControls/IphoneCaseControls';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/IphoneCase/OrderSummary/OrderSummary';
+import axios from '../../axios-orders';
 
 const IPHONE_TYPE_PRICE = {
   iPhone6: 100,
@@ -44,7 +45,25 @@ class IphoneCaseCreator extends Component {
   }
 
   purchaseContinueHandler = () => {
-    alert('You continue!');
+    // alert('You continue!');
+    const order = {
+      type: this.state.type,
+      price: this.state.price,
+      customer: {
+        name: 'Gosia Rakowska',
+        address: {
+          street: 'Rakowska 11/128',
+          zipCode: '12345',
+          country: 'Holland'
+        },
+        email: 'test@test.com'
+      },
+      deliveryMethod: 'fastest'
+    }
+
+    axios.post('/orders.json', order)
+      .then(response => console.log(response))
+      .catch(error => console.log(error));
   }
 
   render() {
