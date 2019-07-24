@@ -5,6 +5,7 @@ import IphoneCase from '../../components/IphoneCase/IphoneCase';
 import IphoneCaseControls from '../../components/IphoneCase/IphoneCaseControls/IphoneCaseControls';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/IphoneCase/OrderSummary/OrderSummary';
+import Spinner from '../../components/UI/Spinner/Spinner';
 import axios from '../../axios-orders';
 
 const IPHONE_TYPE_PRICE = {
@@ -19,7 +20,8 @@ class IphoneCaseCreator extends Component {
     type: 'iPhone6',
     price: 100,
     purchaseable: true,
-    purchasing: false
+    purchasing: false,
+    loading: false
   }
 
   updatePurchaseState (type) {
@@ -46,6 +48,7 @@ class IphoneCaseCreator extends Component {
 
   purchaseContinueHandler = () => {
     // alert('You continue!');
+    this.setState({ loading: true });
     const order = {
       type: this.state.type,
       price: this.state.price,
@@ -62,19 +65,28 @@ class IphoneCaseCreator extends Component {
     }
 
     axios.post('/orders.json', order)
-      .then(response => console.log(response))
-      .catch(error => console.log(error));
+      .then(response => {
+        this.setState({ loading: false, purchasing: false });
+      })
+      .catch(error => {
+      this.setState({ loading: false, purchasing: false });
+    });
   }
 
   render() {
+    let orderSummary = <OrderSummary
+      type={this.state.type}
+      price={this.state.price}
+      purchaseCanceled={this.purchaseCancelHandler}
+      purchaseContinued={this.purchaseContinueHandler} />;
+
+    if (this.state.loading) {
+      orderSummary = <Spinner />;
+    }
     return (
       <Aux>
       <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
-        <OrderSummary
-          type={this.state.type}
-          price={this.state.price}
-          purchaseCanceled={this.purchaseCancelHandler}
-          purchaseContinued={this.purchaseContinueHandler} />
+        {orderSummary}
       </Modal>
         <IphoneCase type={this.state.type} />
         <IphoneCaseControls
