@@ -18,14 +18,33 @@ const IPHONE_TYPE_PRICE = {
 
 class IphoneCaseCreator extends Component {
   state = {
-    type: 'iPhone6',
+    type: null,
     price: 100,
     purchaseable: true,
     purchasing: false,
-    loading: false
+    loading: false,
+    error: false
   }
 
-  updatePurchaseState (type) {
+  componentDidMount () {
+    axios.get('https://react-iphone-case.firebaseio.com/type.json')
+      .then(response => {
+        console.log(response);
+        Object.filter = (obj, predicate) =>
+          Object.keys(obj)
+            .filter( key => predicate(obj[key]))
+            .reduce( (res, key) => Object.assign(res, { [key]: obj[key] }), {} );
+
+        let iPhoneType = Object.filter(response.data, type => type);
+        let typeToReturn = Object.keys(iPhoneType)[0];
+        this.setState({type: typeToReturn});
+      })
+      .catch(error => {
+        this.setState({error: true});
+      });
+}
+
+  updatePurchaseState(type) {
     const purchaseableModels = ['iPhone6', 'iPhone7', 'iPhone8'];
     this.setState({ purchaseable: purchaseableModels.includes(type)});
   }
@@ -75,28 +94,39 @@ class IphoneCaseCreator extends Component {
   }
 
   render() {
-    let orderSummary = <OrderSummary
-      type={this.state.type}
-      price={this.state.price}
-      purchaseCanceled={this.purchaseCancelHandler}
-      purchaseContinued={this.purchaseContinueHandler} />;
+    let orderSummary = null;
+    let iPhoneCase = this.state.error ? <p>Case can't be loaded</p> : <Spinner />;
+
+    if (this.state.type) {
+      iPhoneCase = (
+        <Aux>
+          <IphoneCase type={this.state.type} />
+          <IphoneCaseControls
+            typeSelected={this.selectType}
+            checkedType={this.state.type}
+            ordered={this.purchaseHandler}
+            price={this.state.price}
+            purchaseable={this.state.purchaseable}
+             />
+        </Aux>
+      );
+      orderSummary = <OrderSummary
+        type={this.state.type}
+        price={this.state.price}
+        purchaseCanceled={this.purchaseCancelHandler}
+        purchaseContinued={this.purchaseContinueHandler} />;
+    }
 
     if (this.state.loading) {
       orderSummary = <Spinner />;
     }
+
     return (
       <Aux>
       <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
         {orderSummary}
       </Modal>
-        <IphoneCase type={this.state.type} />
-        <IphoneCaseControls
-          typeSelected={this.selectType}
-          checkedType={this.state.type}
-          ordered={this.purchaseHandler}
-          price={this.state.price}
-          purchaseable={this.state.purchaseable}
-           />
+        {iPhoneCase}
       </Aux>
     );
   }
