@@ -6,6 +6,7 @@ import IphoneCaseControls from '../../components/IphoneCase/IphoneCaseControls/I
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/IphoneCase/OrderSummary/OrderSummary';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import axios from '../../axios-orders';
 
 const IPHONE_TYPE_PRICE = {
@@ -64,7 +65,7 @@ class IphoneCaseCreator extends Component {
       deliveryMethod: 'fastest'
     }
 
-    axios.post('/orders.json', order)
+    axios.post('/orders', order)
       .then(response => {
         this.setState({ loading: false, purchasing: false });
       })
@@ -101,4 +102,4 @@ class IphoneCaseCreator extends Component {
   }
 }
 
-export default IphoneCaseCreator;
+export default withErrorHandler(IphoneCaseCreator, axios);
