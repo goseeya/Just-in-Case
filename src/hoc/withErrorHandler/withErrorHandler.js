@@ -10,14 +10,21 @@ const withErrorHandler = ( WrappedComponent, axios ) => {
     }
 
     componentWillMount () {
-      axios.interceptors.request.use(req => {
+      // for interceptors not to rebuild after wrappg every new elem
+      this.requestInterceptor = axios.interceptors.request.use(req => {
         //clear errors
         this.setState({error: null});
         return req;
       });
-      axios.interceptors.response.use(res => res, error => {
+      this.responseInterceptor = axios.interceptors.response.use(res => res, error => {
         this.setState({error: error});
       });
+    }
+
+    componentWillUnmount() {
+      // when component is not required anymore
+      axios.interceptors.request.eject(this.requestInterceptor);
+      axios.interceptors.response.eject(this.responseInterceptor);
     }
 
     errorConfirmedHandler = () => {
