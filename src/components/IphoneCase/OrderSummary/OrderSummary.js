@@ -16,7 +16,7 @@ class OrderSummary extends Component {
         <p>A case for the model:</p>
         <p style={{color: 'pink'}}>{this.props.type}</p>
         <p><strong>Price: {this.props.price}</strong></p>
-        <p>Continue to Checkout?</p>
+        <p>Continue to Basket?</p>
         <Button btnType="Danger" clicked={this.props.purchaseCanceled}>CANCEL</Button>
         <Button btnType="Success" clicked={this.props.purchaseContinued}>CONTINUE</Button>
       </Aux>
