@@ -2,6 +2,8 @@
 
 Personalized iPhone case generator allowing you visualizing your creative minds and keep them always with you.
 
+Demo: https://just-in-case-generator.herokuapp.com/
+
 ## Getting Started
 
 ### `npm start`
