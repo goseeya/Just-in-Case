@@ -68,32 +68,9 @@ class IphoneCaseCreator extends Component {
   }
 
   purchaseContinueHandler = () => {
-    // alert('You continue!');
-    // this.setState({ loading: true });
-    // const order = {
-    //   type: this.state.type,
-    //   price: this.state.price,
-    //   customer: {
-    //     name: 'Gosia Rakowska',
-    //     address: {
-    //       street: 'Rakowska 11/128',
-    //       zipCode: '12345',
-    //       country: 'Holland'
-    //     },
-    //     email: 'test@test.com'
-    //   },
-    //   deliveryMethod: 'fastest'
-    // }
-    //
-    // axios.post('/orders', order)
-    //   .then(response => {
-    //     this.setState({ loading: false, purchasing: false });
-    //   })
-    //   .catch(error => {
-    //   this.setState({ loading: false, purchasing: false });
-    // });
     const queryParams = [];
     queryParams.push(encodeURIComponent('type') + '=' + encodeURIComponent(this.state.type));
+    queryParams.push('price=' + this.state.price);
     const queryString = queryParams.join('&');
     this.props.history.push({
       pathname: '/checkout',

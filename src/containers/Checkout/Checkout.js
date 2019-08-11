@@ -5,20 +5,26 @@ import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSumm
 import ContactData from './ContactData/ContactData';
 
 class Checkout extends Component {
-  state= {
-    type: 'iPhone7'
+  state = {
+    type: '',
+    price: 0
   }
 
-  componentDidMount() {
+  componentWillMount() {
     // console.log(this.props.location.search);
     const query = new URLSearchParams(this.props.location.search);
     // console.log(query);
     const params = {};
+    let price = 0;
     for (let param of query.entries()) {
-      params[param[0]] = param[1];
+      if (param[0] === 'price') {
+        price = param[1];
+      } else {
+        params[param[0]] = param[1];
+      }
     }
 
-    this.setState({type: params.type});
+    this.setState({ type: params.type, price: price });
   }
 
   checkoutCancelledHandler = () => {
@@ -38,7 +44,8 @@ class Checkout extends Component {
           checkoutContinued={this.checkoutContinuedHandler} />
         <Route
           path={this.props.match.path + '/contact-data'}
-          component={ContactData} />
+          render={(props) => (<ContactData type={this.state.type} price={this.state.price} {...props} />)}
+          />
       </div>
     );
   }
