@@ -92,7 +92,13 @@ class IphoneCaseCreator extends Component {
     //   .catch(error => {
     //   this.setState({ loading: false, purchasing: false });
     // });
-    this.props.history.push('/checkout');
+    const queryParams = [];
+    queryParams.push(encodeURIComponent('type') + '=' + encodeURIComponent(this.state.type));
+    const queryString = queryParams.join('&');
+    this.props.history.push({
+      pathname: '/checkout',
+      search: '?' + queryString
+    });
   }
 
   render() {
