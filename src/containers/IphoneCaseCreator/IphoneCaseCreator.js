@@ -27,6 +27,7 @@ class IphoneCaseCreator extends Component {
   }
 
   componentDidMount () {
+    console.log(this.props);
     axios.get('https://react-iphone-case.firebaseio.com/type.json')
       .then(response => {
         console.log(response);
@@ -42,7 +43,7 @@ class IphoneCaseCreator extends Component {
       .catch(error => {
         this.setState({error: true});
       });
-}
+    }
 
   updatePurchaseState(type) {
     const purchaseableModels = ['iPhone6', 'iPhone7', 'iPhone8'];
@@ -68,29 +69,30 @@ class IphoneCaseCreator extends Component {
 
   purchaseContinueHandler = () => {
     // alert('You continue!');
-    this.setState({ loading: true });
-    const order = {
-      type: this.state.type,
-      price: this.state.price,
-      customer: {
-        name: 'Gosia Rakowska',
-        address: {
-          street: 'Rakowska 11/128',
-          zipCode: '12345',
-          country: 'Holland'
-        },
-        email: 'test@test.com'
-      },
-      deliveryMethod: 'fastest'
-    }
-
-    axios.post('/orders', order)
-      .then(response => {
-        this.setState({ loading: false, purchasing: false });
-      })
-      .catch(error => {
-      this.setState({ loading: false, purchasing: false });
-    });
+    // this.setState({ loading: true });
+    // const order = {
+    //   type: this.state.type,
+    //   price: this.state.price,
+    //   customer: {
+    //     name: 'Gosia Rakowska',
+    //     address: {
+    //       street: 'Rakowska 11/128',
+    //       zipCode: '12345',
+    //       country: 'Holland'
+    //     },
+    //     email: 'test@test.com'
+    //   },
+    //   deliveryMethod: 'fastest'
+    // }
+    //
+    // axios.post('/orders', order)
+    //   .then(response => {
+    //     this.setState({ loading: false, purchasing: false });
+    //   })
+    //   .catch(error => {
+    //   this.setState({ loading: false, purchasing: false });
+    // });
+    this.props.history.push('/checkout');
   }
 
   render() {
