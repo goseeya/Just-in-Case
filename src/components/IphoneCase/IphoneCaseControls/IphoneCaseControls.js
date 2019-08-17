@@ -15,8 +15,6 @@ const iPhoneCaseControls = (props) => (
   <div className={styles.IphoneCaseControl}>
     <p>Price for the case: {props.price}</p>
       {controls.map(ctrl => (
-        console.log(props.checkedType),
-        console.log(ctrl.type),
         <IphoneCaseControl
           key={ctrl.label}
           label={ctrl.label}

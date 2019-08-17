@@ -27,10 +27,8 @@ class IphoneCaseCreator extends Component {
   }
 
   componentDidMount () {
-    console.log(this.props);
     axios.get('https://react-iphone-case.firebaseio.com/type.json')
       .then(response => {
-        console.log(response);
         Object.filter = (obj, predicate) =>
           Object.keys(obj)
             .filter( key => predicate(obj[key]))
