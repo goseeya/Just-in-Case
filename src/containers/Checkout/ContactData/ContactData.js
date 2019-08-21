@@ -110,18 +110,18 @@ class ContactData extends Component {
   }
 
   checkValidity(value, rules) {
-    let isValid = false;
+    let isValid = true;
 
     if (rules.required) {
-      isValid = value.trim() !== ''; //remove white space
+      isValid = value.trim() !== '' && isValid; //remove white space
     }
 
     if (rules.minLength) {
-      isValid = value.length >= rules.minLength;
+      isValid = value.length >= rules.minLength && isValid;
     }
 
     if (rules.maxLength) {
-      isValid = value.length <= rules.minLength;
+      isValid = value.length <= rules.minLength && isValid;
     }
 
     // TODO change it so that it wont check one after another
