@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Aux from '../../hoc/Aux/Aux';
 import IphoneCase from '../../components/IphoneCase/IphoneCase';
@@ -8,6 +9,7 @@ import OrderSummary from '../../components/IphoneCase/OrderSummary/OrderSummary'
 import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import axios from '../../axios-orders';
+import * as actionTypes from '../../store/actions';
 
 const IPHONE_TYPE_PRICE = {
   iPhone6: 100,
@@ -18,7 +20,6 @@ const IPHONE_TYPE_PRICE = {
 
 class IphoneCaseCreator extends Component {
   state = {
-    type: null,
     price: 100,
     purchaseable: true,
     purchasing: false,
@@ -67,7 +68,7 @@ class IphoneCaseCreator extends Component {
 
   purchaseContinueHandler = () => {
     const queryParams = [];
-    queryParams.push(encodeURIComponent('type') + '=' + encodeURIComponent(this.state.type));
+    queryParams.push(encodeURIComponent('type') + '=' + encodeURIComponent(this.props.tp));
     queryParams.push('price=' + this.state.price);
     const queryString = queryParams.join('&');
     this.props.history.push({
@@ -80,13 +81,13 @@ class IphoneCaseCreator extends Component {
     let orderSummary = null;
     let iPhoneCase = this.state.error ? <p>Case can't be loaded</p> : <Spinner />;
 
-    if (this.state.type) {
+    if (this.props.tp) {
       iPhoneCase = (
         <Aux>
-          <IphoneCase type={this.state.type} />
+          <IphoneCase type={this.props.tp} />
           <IphoneCaseControls
-            typeSelected={this.selectType}
-            checkedType={this.state.type}
+            typeSelected={this.props.onTypeChanged}
+            checkedType={this.props.tp}
             ordered={this.purchaseHandler}
             price={this.state.price}
             purchaseable={this.state.purchaseable}
@@ -94,7 +95,7 @@ class IphoneCaseCreator extends Component {
         </Aux>
       );
       orderSummary = <OrderSummary
-        type={this.state.type}
+        type={this.props.tp}
         price={this.state.price}
         purchaseCanceled={this.purchaseCancelHandler}
         purchaseContinued={this.purchaseContinueHandler} />;
@@ -115,4 +116,16 @@ class IphoneCaseCreator extends Component {
   }
 }
 
-export default withErrorHandler(IphoneCaseCreator, axios);
+const mapStateToProps = state => {
+  return {
+    tp: state.type
+  };
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onTypeChanged: (iType) => dispatch({type: actionTypes.CHANGE_TYPE, iPhoneType: iType})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(IphoneCaseCreator, axios)); // we already pass props here
