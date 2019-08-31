@@ -6,7 +6,15 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-
+  switch (action.type) {
+    case actionTypes.CHANGE_TYPE:
+      return {
+        ...state,
+        type: action.iPhoneType
+      };
+    default:
+      return state;
+  }
 };
 
 export default reducer;
