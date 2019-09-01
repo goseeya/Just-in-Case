@@ -11,16 +11,8 @@ import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import axios from '../../axios-orders';
 import * as actionTypes from '../../store/actions';
 
-const IPHONE_TYPE_PRICE = {
-  iPhone6: 100,
-  iPhone7: 110,
-  iPhone8: 120,
-  iPhone9: 130
-}
-
 class IphoneCaseCreator extends Component {
   state = {
-    price: 100,
     purchaseable: true,
     purchasing: false,
     loading: false,
@@ -47,15 +39,6 @@ class IphoneCaseCreator extends Component {
   updatePurchaseState(type) {
     const purchaseableModels = ['iPhone6', 'iPhone7', 'iPhone8'];
     this.setState({ purchaseable: purchaseableModels.includes(type)});
-  }
-
-  selectType = (type) => {
-    const newPrice = IPHONE_TYPE_PRICE[type];
-    this.setState({
-      type: type,
-      price: newPrice
-    })
-    this.updatePurchaseState(type);
   }
 
   purchaseHandler = () => {
@@ -89,14 +72,14 @@ class IphoneCaseCreator extends Component {
             typeSelected={this.props.onTypeChanged}
             checkedType={this.props.tp}
             ordered={this.purchaseHandler}
-            price={this.state.price}
+            price={this.props.prc}
             purchaseable={this.state.purchaseable}
              />
         </Aux>
       );
       orderSummary = <OrderSummary
         type={this.props.tp}
-        price={this.state.price}
+        price={this.props.prc}
         purchaseCanceled={this.purchaseCancelHandler}
         purchaseContinued={this.purchaseContinueHandler} />;
     }
@@ -118,7 +101,8 @@ class IphoneCaseCreator extends Component {
 
 const mapStateToProps = state => {
   return {
-    tp: state.type
+    tp: state.type,
+    prc: state.price
   };
 }
 
