@@ -13,7 +13,6 @@ import * as actionTypes from '../../store/actions';
 
 class IphoneCaseCreator extends Component {
   state = {
-    purchaseable: true,
     purchasing: false,
     loading: false,
     error: false
@@ -38,7 +37,7 @@ class IphoneCaseCreator extends Component {
 
   updatePurchaseState(type) {
     const purchaseableModels = ['iPhone6', 'iPhone7', 'iPhone8'];
-    this.setState({ purchaseable: purchaseableModels.includes(type)});
+    return purchaseableModels.includes(type);
   }
 
   purchaseHandler = () => {
@@ -73,7 +72,7 @@ class IphoneCaseCreator extends Component {
             checkedType={this.props.tp}
             ordered={this.purchaseHandler}
             price={this.props.prc}
-            purchaseable={this.state.purchaseable}
+            purchaseable={this.updatePurchaseState(this.props.tp)}
              />
         </Aux>
       );

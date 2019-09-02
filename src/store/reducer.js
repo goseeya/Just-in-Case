@@ -2,7 +2,7 @@ import * as actionTypes from './actions';
 
 const initialState = {
   type: 'iPhone6',
-  price: 100,
+  price: 100
 };
 
 const IPHONE_TYPE_PRICE = {
