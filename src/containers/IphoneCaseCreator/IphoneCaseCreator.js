@@ -49,14 +49,7 @@ class IphoneCaseCreator extends Component {
   }
 
   purchaseContinueHandler = () => {
-    const queryParams = [];
-    queryParams.push(encodeURIComponent('type') + '=' + encodeURIComponent(this.props.tp));
-    queryParams.push('price=' + this.state.price);
-    const queryString = queryParams.join('&');
-    this.props.history.push({
-      pathname: '/checkout',
-      search: '?' + queryString
-    });
+    this.props.history.push('/checkout');
   }
 
   render() {
