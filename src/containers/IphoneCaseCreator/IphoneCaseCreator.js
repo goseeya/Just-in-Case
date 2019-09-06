@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { changeType } from '../../store/actions';
 
 import Aux from '../../hoc/Aux/Aux';
 import IphoneCase from '../../components/IphoneCase/IphoneCase';
@@ -9,7 +10,7 @@ import OrderSummary from '../../components/IphoneCase/OrderSummary/OrderSummary'
 import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import axios from '../../axios-orders';
-import * as actionTypes from '../../store/actions';
+// import * as actionTypes from '../../store/actions';
 
 class IphoneCaseCreator extends Component {
   state = {
@@ -100,7 +101,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onTypeChanged: (iType) => dispatch({type: actionTypes.CHANGE_TYPE, iPhoneType: iType})
+    // onTypeChanged: (iType) => dispatch({type: actionTypes.CHANGE_TYPE, iPhoneType: iType})
+    onTypeChanged: (iType) => dispatch(changeType(iType))
   }
 }
 
