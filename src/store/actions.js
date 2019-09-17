@@ -1,9 +1,10 @@
 import * as actionTypes from './actionTypes';
 
 export const modifyType = ( iType ) => {
+  const updatedType = iType;
   return {
     type: actionTypes.CHANGE_TYPE,
-    iPhoneType: iType
+    iPhoneType: updatedResult
   }
 }
 
