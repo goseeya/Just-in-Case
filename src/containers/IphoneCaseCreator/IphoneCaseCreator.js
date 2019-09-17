@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { changeType } from '../../store/actions';
+import * as actionCreators from '../../store/index';
 
 import Aux from '../../hoc/Aux/Aux';
 import IphoneCase from '../../components/IphoneCase/IphoneCase';
@@ -102,7 +102,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     // onTypeChanged: (iType) => dispatch({type: actionTypes.CHANGE_TYPE, iPhoneType: iType})
-    onTypeChanged: (iType) => dispatch(changeType(iType))
+    onTypeChanged: (iType) => dispatch(actionCreators.changeType(iType))
   }
 }
 

@@ -1,8 +1,8 @@
-export const CHANGE_TYPE = 'CHANGE_TYPE';
+import * as actionTypes from './actionTypes';
 
 export const modifyType = ( iType ) => {
   return {
-    type: 'CHANGE_TYPE',
+    type: actionTypes.CHANGE_TYPE,
     iPhoneType: iType
   }
 }
@@ -11,6 +11,7 @@ export const changeType = (iType) => {
   return dispatch => {
     setTimeout(() => {
       dispatch(modifyType(iType));
-    }, 2000);
+    // }, 2000);
+  }, 0);
   }
 };
