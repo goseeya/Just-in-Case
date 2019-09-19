@@ -1,4 +1,5 @@
 import * as actionTypes from './actionTypes';
+import { updateObject  from './utility';
 
 const initialState = {
   type: 'iPhone6',
@@ -15,11 +16,15 @@ const IPHONE_TYPE_PRICE = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.CHANGE_TYPE:
-      return {
-        ...state,
+      // return {
+      //   ...state,
+      //   type: action.iPhoneType,
+      //   price: IPHONE_TYPE_PRICE[action.iPhoneType]
+      // };
+      return updateObject(state, {
         type: action.iPhoneType,
         price: IPHONE_TYPE_PRICE[action.iPhoneType]
-      };
+      });
     default:
       return state;
   }
