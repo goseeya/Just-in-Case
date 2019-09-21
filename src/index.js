@@ -8,7 +8,7 @@ import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import reducer from './store/reducer';
+import iPhoneCaseCreatorReducer from './store/reducers/iPhoneCaseCreator';
 
 
 const logger = store => {
@@ -24,7 +24,7 @@ const logger = store => {
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(reducer, composeEnhancers(applyMiddleware(logger, thunk)));
+const store = createStore(iPhoneCaseCreatorReducer, composeEnhancers(applyMiddleware(logger, thunk)));
 
 
 const app = (
