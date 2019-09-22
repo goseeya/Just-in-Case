@@ -1,5 +1,6 @@
 export {
-  changeType
+  changeType,
+  initType
 } from './iPhoneCaseCreator';
 
 export {} from './order';

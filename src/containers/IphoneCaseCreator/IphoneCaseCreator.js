@@ -18,7 +18,7 @@ class IphoneCaseCreator extends Component {
   }
 
   componentDidMount () {
-
+    this.props.onInitType();
     }
 
   updatePurchaseState(type) {
@@ -40,7 +40,7 @@ class IphoneCaseCreator extends Component {
 
   render() {
     let orderSummary = null;
-    let iPhoneCase = this.state.error ? <p>Case can't be loaded</p> : <Spinner />;
+    let iPhoneCase = this.props.error ? <p>Case can't be loaded</p> : <Spinner />;
 
     if (this.props.tp) {
       iPhoneCase = (
@@ -80,7 +80,8 @@ class IphoneCaseCreator extends Component {
 const mapStateToProps = state => {
   return {
     tp: state.type,
-    prc: state.price
+    prc: state.price,
+    error: state.error
   };
 }
 
@@ -88,7 +89,8 @@ const mapDispatchToProps = dispatch => {
   return {
     // onTypeChanged: (iType) => dispatch({type: actionTypes.CHANGE_TYPE, iPhoneType: iType})
     // onTypeChanged: (iType) => dispatch(actionCreators.changeType(iType))
-    onTypeChanged: (iType) => dispatch(iPhoneCaseCreatorActions.changeType(iType))
+    onTypeChanged: (iType) => dispatch(iPhoneCaseCreatorActions.changeType(iType)),
+    onInitType: () => dispatch(iPhoneCaseCreatorActions.initType())
   }
 }
 
