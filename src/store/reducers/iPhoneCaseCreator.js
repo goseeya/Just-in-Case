@@ -2,8 +2,9 @@ import * as actionTypes from '../actions/actionTypes';
 import { updateObject }  from './utility';
 
 const initialState = {
-  type: 'iPhone6',
-  price: 100
+  type: '',
+  price: 100,
+  error: false
 };
 
 const IPHONE_TYPE_PRICE = {

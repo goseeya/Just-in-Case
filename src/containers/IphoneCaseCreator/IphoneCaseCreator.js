@@ -8,32 +8,17 @@ import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/IphoneCase/OrderSummary/OrderSummary';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
-import axios from '../../axios-orders';
 // import * as actionTypes from '../../store/actions';
+import axios from '../../axios-orders';
 import * as iPhoneCaseCreatorActions from '../../store/actions/index';
 
 class IphoneCaseCreator extends Component {
   state = {
-    purchasing: false,
-    loading: false,
-    error: false
+    purchasing: false
   }
 
   componentDidMount () {
-    axios.get('https://react-iphone-case.firebaseio.com/type.json')
-      .then(response => {
-        Object.filter = (obj, predicate) =>
-          Object.keys(obj)
-            .filter( key => predicate(obj[key]))
-            .reduce( (res, key) => Object.assign(res, { [key]: obj[key] }), {} );
 
-        let iPhoneType = Object.filter(response.data, type => type);
-        let typeToReturn = Object.keys(iPhoneType)[0];
-        this.setState({type: typeToReturn});
-      })
-      .catch(error => {
-        this.setState({error: true});
-      });
     }
 
   updatePurchaseState(type) {
@@ -77,9 +62,9 @@ class IphoneCaseCreator extends Component {
         purchaseContinued={this.purchaseContinueHandler} />;
     }
 
-    if (this.state.loading) {
-      orderSummary = <Spinner />;
-    }
+    // if (this.state.loading) {
+    //   orderSummary = <Spinner />;
+    // }
 
     return (
       <Aux>

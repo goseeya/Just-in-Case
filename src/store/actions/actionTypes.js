@@ -1,1 +1,3 @@
 export const CHANGE_TYPE = 'CHANGE_TYPE';
+export const MODIFY_TYPE = 'MODIFY_TYPE';
+export const FETCH_TYPE_FAILED = 'FETCH_TYPE_FAILED';
