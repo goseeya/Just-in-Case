@@ -3,4 +3,6 @@ export {
   initType
 } from './iPhoneCaseCreator';
 
-export {} from './order';
+export {
+  purchaseBStart
+ } from './order';
