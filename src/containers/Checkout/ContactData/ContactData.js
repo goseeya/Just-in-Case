@@ -6,7 +6,7 @@ import Spinner from '../../../components/UI/Spinner/Spinner';
 import styles from './ContactData.module.css';
 import axios from '../../../axios-orders';
 import Input from '../../../components/UI/Input/Input';
-import withErrorHandler from '../../../hoc/withErrorHandler';
+import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
 import * as actions from '../../../store/actions/index';
 
 class ContactData extends Component {
@@ -201,7 +201,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  onOrderCase: (orderData) => dispatch(actions.purchaseCaseStart());
+    return {
+      onOrderCase: (orderData) => dispatch(actions.purchaseCaseStart(orderData))
+    }
 }
 
 export default connect(mapStateToProps)(withErrorHandler(ContactData, axios));

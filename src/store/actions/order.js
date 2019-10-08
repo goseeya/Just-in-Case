@@ -18,7 +18,7 @@ export const purchaseCaseFail = (error) => {
 
 export const purchaseCaseStart = (orderData) => {
   return dispatch => {
-    axios.post('/orders.json', order)
+    axios.post('/orders.json', orderData)
       .then(response => {
         console.log(response.data);
         dispatch(purchaseCaseSuccess(response.data, orderData));
