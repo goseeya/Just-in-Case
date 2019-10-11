@@ -4,5 +4,5 @@ export {
 } from './iPhoneCaseCreator';
 
 export {
-  purchaseCaseStart
+  purchaseCase
  } from './order';

@@ -92,8 +92,7 @@ class ContactData extends Component {
           valid: true
         }
     },
-    formIsValid: false,
-    loading: false
+    formIsValid: false
   }
 
   orderHandler = (event) => {
@@ -181,7 +180,7 @@ class ContactData extends Component {
         <Button btnType="Success" disabled={!this.state.formIsValid}>ORDER</Button>
       </form>
     );
-    if (this.state.loading) {
+    if (this.props.loading) {
       form = <Spinner />;
     }
     return (
@@ -196,14 +195,15 @@ class ContactData extends Component {
 const mapStateToProps = state => {
   return {
     tp: state.type,
-    prc: state.price
+    prc: state.price,
+    loading: state.loading
   }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-      onOrderCase: (orderData) => dispatch(actions.purchaseCaseStart(orderData))
-    }
-}
+      onOrderCase: (orderData) => dispatch(actions.purchaseCase(orderData))
+    };
+};
 
-export default connect(mapStateToProps)(withErrorHandler(ContactData, axios));
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(ContactData, axios));

@@ -16,8 +16,15 @@ export const purchaseCaseFail = (error) => {
   };
 };
 
-export const purchaseCaseStart = (orderData) => {
+export const purchaseCaseStart = () => {
+  return {
+    type: actionTypes.PURCHASE_CASE_START
+  };
+};
+
+export const purchaseCase = (orderData) => {
   return dispatch => {
+    dispatch(purchaseCaseStart());
     axios.post('/orders.json', orderData)
       .then(response => {
         console.log(response.data);
