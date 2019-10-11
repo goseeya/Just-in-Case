@@ -194,9 +194,9 @@ class ContactData extends Component {
 
 const mapStateToProps = state => {
   return {
-    tp: state.type,
-    prc: state.price,
-    loading: state.loading
+    tp: state.iPhoneCaseCreator.type,
+    prc: state.iPhoneCaseCreator.price,
+    loading: state.orders.loading
   }
 };
 

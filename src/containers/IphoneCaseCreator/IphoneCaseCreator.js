@@ -79,9 +79,9 @@ class IphoneCaseCreator extends Component {
 
 const mapStateToProps = state => {
   return {
-    tp: state.type,
-    prc: state.price,
-    error: state.error
+    tp: state.iPhoneCaseCreator.type,
+    prc: state.iPhoneCaseCreator.price,
+    error: state.iPhoneCaseCreator.error
   };
 }
 
