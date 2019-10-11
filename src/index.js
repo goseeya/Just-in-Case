@@ -30,7 +30,7 @@ const rootReducer = combineReducers({
   order: orderReducer
 });
 
-const store = createStore(iPhoneCaseCreatorReducer, composeEnhancers(applyMiddleware(logger, thunk)));
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, thunk)));
 
 
 const app = (

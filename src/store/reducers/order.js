@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions/actioTypes';
+import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
   orders: [],
@@ -7,7 +7,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.PURCHASE_BURGER_START:
+    case actionTypes.PURCHASE_CASE_START:
       return {
         ...state,
         loading: true

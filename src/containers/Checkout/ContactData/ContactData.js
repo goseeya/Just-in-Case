@@ -87,7 +87,7 @@ class ContactData extends Component {
               {value: 'cheapest', displayValue: 'Cheapest'}
             ]
           },
-          value: '',
+          value: 'fastest',
           validation: {},
           valid: true
         }
@@ -196,7 +196,7 @@ const mapStateToProps = state => {
   return {
     tp: state.iPhoneCaseCreator.type,
     prc: state.iPhoneCaseCreator.price,
-    loading: state.orders.loading
+    loading: state.order.loading
   }
 };
 
