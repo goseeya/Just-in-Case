@@ -5,5 +5,6 @@ export {
 
 export {
   purchaseCase,
-  purchaseInit
+  purchaseInit,
+  fetchOrders
  } from './order';
