@@ -10,7 +10,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 // import * as actionTypes from '../../store/actions';
 import axios from '../../axios-orders';
-import * as iPhoneCaseCreatorActions from '../../store/actions/index';
+import * as actions from '../../store/actions/index';
 
 class IphoneCaseCreator extends Component {
   state = {
@@ -35,6 +35,7 @@ class IphoneCaseCreator extends Component {
   }
 
   purchaseContinueHandler = () => {
+    this.props.onInitPurchase();
     this.props.history.push('/checkout');
   }
 
@@ -89,8 +90,9 @@ const mapDispatchToProps = dispatch => {
   return {
     // onTypeChanged: (iType) => dispatch({type: actionTypes.CHANGE_TYPE, iPhoneType: iType})
     // onTypeChanged: (iType) => dispatch(actionCreators.changeType(iType))
-    onTypeChanged: (iType) => dispatch(iPhoneCaseCreatorActions.changeType(iType)),
-    onInitType: () => dispatch(iPhoneCaseCreatorActions.initType())
+    onTypeChanged: (iType) => dispatch(actions.changeType(iType)),
+    onInitType: () => dispatch(actions.initType()),
+    onInitPurchase: () => dispatch(actions.purchaseInit())
   }
 }
 
