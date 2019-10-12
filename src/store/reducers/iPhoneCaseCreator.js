@@ -30,6 +30,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         iPhoneType: action.iPhoneType,
+        price: 100,
         error: false
       };
     case actionTypes.FETCH_TYPE_FAILED:

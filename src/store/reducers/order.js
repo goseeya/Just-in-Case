@@ -21,12 +21,12 @@ const reducer = (state = initialState, action) => {
     case actionTypes.PURCHASE_CASE_SUCCESS:
       const newOrder = {
         ...action.orderData,
-        purchased: true,
         id: action.orderId
       };
       return {
         ...state,
         loading: false,
+        purchased: true,
         orders: state.orders.concat(newOrder)
       };
     case actionTypes.PURCHASE_CASE_FAIL:

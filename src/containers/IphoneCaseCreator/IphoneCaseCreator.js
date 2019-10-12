@@ -19,7 +19,7 @@ class IphoneCaseCreator extends Component {
 
   componentDidMount () {
     this.props.onInitType();
-    }
+  }
 
   updatePurchaseState(type) {
     const purchaseableModels = ['iPhone6', 'iPhone7', 'iPhone8'];
