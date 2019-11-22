@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Layout from './hoc/Layout/Layout';
@@ -6,8 +6,7 @@ import IphoneCaseCreator from './containers/IphoneCaseCreator/IphoneCaseCreator'
 import Checkout from './containers/Checkout/Checkout';
 import Orders from './containers/Orders/Orders';
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
       <div>
         <Layout>
@@ -19,7 +18,6 @@ class App extends Component {
         </Layout>
       </div>
     );
-  }
 }
 
 export default App;
