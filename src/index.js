@@ -10,6 +10,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import iPhoneCaseCreatorReducer from './store/reducers/iPhoneCaseCreator';
 import orderReducer from './store/reducers/order';
+import authReducer from './store/reducers/auth';
 
 
 const logger = store => {
@@ -27,7 +28,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
   iPhoneCaseCreator: iPhoneCaseCreatorReducer,
-  order: orderReducer
+  order: orderReducer,
+  auth: authReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, thunk)));
