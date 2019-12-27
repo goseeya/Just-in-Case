@@ -108,7 +108,7 @@ class ContactData extends Component {
       orderData: formData
     }
 
-    this.props.onOrderCase(order);
+    this.props.onOrderCase(order, this.props.token);
   }
 
   checkValidity(value, rules) {
@@ -206,13 +206,14 @@ const mapStateToProps = state => {
   return {
     tp: state.iPhoneCaseCreator.type,
     prc: state.iPhoneCaseCreator.price,
-    loading: state.order.loading
+    loading: state.order.loading,
+    token: state.auth.token
   }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-      onOrderCase: (orderData) => dispatch(actions.purchaseCase(orderData))
+      onOrderCase: (orderData, token) => dispatch(actions.purchaseCase(orderData, token))
     };
 };
 
