@@ -40,7 +40,7 @@ const fetchOrdersStart = (state, action) => {
   return {
     ...state,
     orders: action.orders,
-    loading: false
+    loading: true
   };
 };
 
