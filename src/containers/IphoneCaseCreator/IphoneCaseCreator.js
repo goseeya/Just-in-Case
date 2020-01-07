@@ -27,7 +27,11 @@ class IphoneCaseCreator extends Component {
   }
 
   purchaseHandler = () => {
-    this.setState({purchasing: true});
+    if (this.props.isAuthenticated) {
+      this.setState({purchasing: true});
+    } else {
+      this.props.history.push('/auth');
+    }
   }
 
   purchaseCancelHandler = () => {
@@ -51,6 +55,7 @@ class IphoneCaseCreator extends Component {
             typeSelected={this.props.onTypeChanged}
             checkedType={this.props.tp}
             ordered={this.purchaseHandler}
+            isAuth={this.props.isAuthenticated}
             price={this.props.prc}
             purchaseable={this.updatePurchaseState(this.props.tp)}
              />
@@ -82,7 +87,8 @@ const mapStateToProps = state => {
   return {
     tp: state.iPhoneCaseCreator.type,
     prc: state.iPhoneCaseCreator.price,
-    error: state.iPhoneCaseCreator.error
+    error: state.iPhoneCaseCreator.error,
+    isAuthenticated: state.auth.token !== null
   };
 }
 
