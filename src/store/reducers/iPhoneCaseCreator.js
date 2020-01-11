@@ -4,7 +4,8 @@ import { updateObject }  from './utility';
 const initialState = {
   type: '',
   price: 100,
-  error: false
+  error: false,
+  creating: false
 };
 
 const IPHONE_TYPE_PRICE = {
