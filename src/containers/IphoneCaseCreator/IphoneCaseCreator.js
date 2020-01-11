@@ -30,6 +30,7 @@ class IphoneCaseCreator extends Component {
     if (this.props.isAuthenticated) {
       this.setState({purchasing: true});
     } else {
+      this.props.onSetAuthRedirectPath('/checkout');
       this.props.history.push('/auth');
     }
   }
@@ -98,7 +99,8 @@ const mapDispatchToProps = dispatch => {
     // onTypeChanged: (iType) => dispatch(actionCreators.changeType(iType))
     onTypeChanged: (iType) => dispatch(actions.changeType(iType)),
     onInitType: () => dispatch(actions.initType()),
-    onInitPurchase: () => dispatch(actions.purchaseInit())
+    onInitPurchase: () => dispatch(actions.purchaseInit()),
+    onSetAuthRedirectPath: (path) => dispatch(actions.setAuthRedirectPath(path))
   }
 }
 

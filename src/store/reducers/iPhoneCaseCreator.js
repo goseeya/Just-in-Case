@@ -25,13 +25,15 @@ const reducer = (state = initialState, action) => {
       // };
       return updateObject(state, {
         type: action.iPhoneType,
-        price: IPHONE_TYPE_PRICE[action.iPhoneType]
+        price: IPHONE_TYPE_PRICE[action.iPhoneType],
+        creating: true
       });
     case actionTypes.MODIFY_TYPE:
       return updateObject(state, {
         iPhoneType: action.iPhoneType,
         price: 100,
-        error: false
+        error: false,
+        creating: false
       });
     case actionTypes.FETCH_TYPE_FAILED:
       return {

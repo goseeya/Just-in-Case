@@ -25,7 +25,7 @@ const iPhoneCaseControls = (props) => (
       <button
         className={styles.OrderButton}
         disabled={!props.purchaseable}
-        onClick={props.ordered}>{props.isAuth ? 'ORDER NOW' : 'SIGN UP TO OTDER'}</button>
+        onClick={props.ordered}>{props.isAuth ? 'ORDER NOW' : 'SIGN UP TO ORDER'}</button>
   </div>
 );
 export default iPhoneCaseControls;
