@@ -40,7 +40,7 @@ export const changeType = (iType) => {
   return (dispatch, getState) => {
     setTimeout(() => {
       const oldType = getState().type;
-      console.log(oldType);
+      //console.log(oldType);
       dispatch(modifyType(iType));
     // }, 2000);
   }, 0);

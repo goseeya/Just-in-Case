@@ -5,7 +5,7 @@ export const purchaseCaseSuccess = (id, orderData) => {
   return {
     type: actionTypes.PURCHASE_CASE_SUCCESS,
     orderId: id,
-    orderDate: orderData
+    orderData: orderData
   };
 };
 
@@ -27,7 +27,7 @@ export const purchaseCase = (orderData, token) => {
     dispatch(purchaseCaseStart());
     axios.post('/orders.json?auth=' + token, orderData)
       .then(response => {
-        console.log(response.data);
+        //console.log(response.data);
         dispatch(purchaseCaseSuccess(response.data.name, orderData));
       })
       .catch(error => {
@@ -62,10 +62,11 @@ export const fetchOrdersStart = () => {
   };
 };
 
-export const fetchOrders = (token) => {
+export const fetchOrders = (token, userId) => {
   return dispatch => {
     dispatch(fetchOrdersStart());
-    axios.get('/orders.json?auth=' + token)
+    const queryParams = '?auth=' + token + '&orderBy="userId"&equalTo=' + userId + '"';
+    axios.post('/orders.json?auth=' + queryParams)
       .then(res => {
         const fetchedOrders = [];
         for (let key in res.data) {
@@ -74,7 +75,7 @@ export const fetchOrders = (token) => {
             id: key
           });
         }
-        console.log(res.data);
+        //console.log(res.data);
         dispatch(fetchOrdersSuccess(fetchedOrders));
       })
       .catch(err => {

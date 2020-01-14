@@ -105,7 +105,8 @@ class ContactData extends Component {
     const order = {
       type: this.state.tp,
       price: this.props.prc,
-      orderData: formData
+      orderData: formData,
+      userId: this.props.userId
     }
 
     this.props.onOrderCase(order, this.props.token);
@@ -157,7 +158,7 @@ class ContactData extends Component {
     updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
     updatedFormElement.touched = true;
     updatedOrderForm[inputIdentifier] = updatedFormElement;
-    console.log(updatedFormElement);
+    //console.log(updatedFormElement);
 
     let formIsValid = true;
     for (let inputIdentifier in updatedOrderForm) {
@@ -207,7 +208,8 @@ const mapStateToProps = state => {
     tp: state.iPhoneCaseCreator.type,
     prc: state.iPhoneCaseCreator.price,
     loading: state.order.loading,
-    token: state.auth.token
+    token: state.auth.token,
+    userId: state.auth.userId
   }
 };
 
