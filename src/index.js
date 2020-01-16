@@ -16,16 +16,14 @@ import authReducer from './store/reducers/auth';
 const logger = store => {
   return next => {
     return action => {
-      //console.log('[Middleware] Dispatching', action);
       const result = next(action); // lets the action continue to the reducer
-      //console.log('[Middleware] next state', store.getState());
       return result;
     }
   }
 };
 
 const composeEnhancers = process.env.NODE_ENV === 'development' ?  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
-  
+
 const rootReducer = combineReducers({
   iPhoneCaseCreator: iPhoneCaseCreatorReducer,
   order: orderReducer,

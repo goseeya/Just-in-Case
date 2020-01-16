@@ -27,7 +27,6 @@ export const purchaseCase = (orderData, token) => {
     dispatch(purchaseCaseStart());
     axios.post('/orders.json?auth=' + token, orderData)
       .then(response => {
-        //console.log(response.data);
         dispatch(purchaseCaseSuccess(response.data.name, orderData));
       })
       .catch(error => {
@@ -75,7 +74,6 @@ export const fetchOrders = (token, userId) => {
             id: key
           });
         }
-        //console.log(res.data);
         dispatch(fetchOrdersSuccess(fetchedOrders));
       })
       .catch(err => {
