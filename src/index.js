@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
 
 import './index.css';
 import App from './App';
@@ -11,6 +12,7 @@ import * as serviceWorker from './serviceWorker';
 import iPhoneCaseCreatorReducer from './store/reducers/iPhoneCaseCreator';
 import orderReducer from './store/reducers/order';
 import authReducer from './store/reducers/auth';
+import { LogoutSaga } from './store/sagas/auth';
 
 
 const logger = store => {
@@ -30,8 +32,11 @@ const rootReducer = combineReducers({
   auth: authReducer
 });
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, thunk)));
+const sagaMiddleware = createSagaMiddleware();
 
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, thunk, sagaMiddleware)));
+
+sagaMiddleware.run(LogoutSaga);
 
 const app = (
   <Provider store={store}>
