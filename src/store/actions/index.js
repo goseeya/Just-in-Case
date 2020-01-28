@@ -1,6 +1,8 @@
 export {
   changeType,
-  initType
+  initType,
+  modifyType,
+  fetchTypeFailed
 } from './iPhoneCaseCreator';
 
 export {
