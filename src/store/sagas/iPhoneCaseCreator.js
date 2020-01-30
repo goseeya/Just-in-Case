@@ -1,4 +1,4 @@
-import { put } from 'redux-saga/effects';
+import { put, delay } from 'redux-saga/effects';
 import axios from 'axios';
 
 import * as actionTypes from '../actions/actions';
@@ -20,4 +20,8 @@ export function* initTypeInitSaga(action) {
       catch(error) {
         yield put(actions.fetchTypeFailed());
       };
+}
+export function* changeTypeInitSaga(action) {
+  yield delay(0);
+  yield put(actions.modifyType(action.iType));
 }

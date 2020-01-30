@@ -8,7 +8,8 @@ import {
     authCheckStateSaga
     } from './auth';
 import {
-    initTypeInitSaga
+    initTypeInitSaga,
+    changeTypeInitSaga
   } from './iPhoneCaseCreator';
 
 export function* watchAuth() {
@@ -17,4 +18,5 @@ export function* watchAuth() {
   yield takeEvery(actionTypes.AUTH_USER, authUserSaga);
   yield takeEvery(actionTypes.AUTH_CHECK_STATE, authCheckStateSaga);
   yield takeEvery(actionTypes.INIT_TYPE_INIT, initTypeInitSaga);
+  yield takeEvery(actionTypes.CHANGE_TYPE_INIT, changeTypeInitSaga);
 }

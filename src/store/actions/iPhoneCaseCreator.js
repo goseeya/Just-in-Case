@@ -23,9 +23,8 @@ export const modifyType = ( iType ) => {
 }
 
 export const changeType = (iType) => {
-  return (dispatch, getState) => {
-    setTimeout(() => {
-      dispatch(modifyType(iType));
-  }, 0);
+  return {
+    type: actionTypes.CHANGE_TYPE_INIT,
+    iType: iType
   }
 };
