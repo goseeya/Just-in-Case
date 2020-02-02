@@ -12,7 +12,7 @@ import * as serviceWorker from './serviceWorker';
 import iPhoneCaseCreatorReducer from './store/reducers/iPhoneCaseCreator';
 import orderReducer from './store/reducers/order';
 import authReducer from './store/reducers/auth';
-import { watchAuth } from './store/sagas/index';
+import { watchAuth, watchIphoneCase, watchOrder } from './store/sagas/index';
 
 
 const logger = store => {
@@ -37,6 +37,8 @@ const sagaMiddleware = createSagaMiddleware();
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, thunk, sagaMiddleware)));
 
 sagaMiddleware.run(watchAuth);
+sagaMiddleware.run(watchIphoneCase);
+sagaMiddleware.run(watchOrder);
 
 const app = (
   <Provider store={store}>

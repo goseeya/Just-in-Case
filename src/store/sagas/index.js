@@ -11,12 +11,24 @@ import {
     initTypeInitSaga,
     changeTypeInitSaga
   } from './iPhoneCaseCreator';
+  import {
+    purchaseCaseSaga,
+    fetchOrdersSaga
+  } from './order';
 
 export function* watchAuth() {
   yield takeEvery(actionTypes.AUTH_INITIATE_LOGOUT, logoutSaga);
   yield takeEvery(actionTypes.AUTH_CHECK_TIMEOUT, checkAuthTimeoutSaga);
   yield takeEvery(actionTypes.AUTH_USER, authUserSaga);
   yield takeEvery(actionTypes.AUTH_CHECK_STATE, authCheckStateSaga);
+}
+
+export function* watchIphoneCase() {
   yield takeEvery(actionTypes.INIT_TYPE_INIT, initTypeInitSaga);
   yield takeEvery(actionTypes.CHANGE_TYPE_INIT, changeTypeInitSaga);
+}
+
+export function* watchOrder() {
+  yield takeEvery(actionTypes.PURCHASE_CASE, purchaseCaseSaga);
+  yield takeEvery(actionTypes.FETCH_ORDERS, fetchOrdersSaga);
 }
