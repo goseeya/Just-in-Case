@@ -1,14 +1,17 @@
 import { delay } from 'redux-saga/effects';
-import { put } from 'redux-saga/effects';
+import { put, call } from 'redux-saga/effects';
 import axios from 'axios';
 
 import * as actions from '../actions/index';
 
 export function* logoutSaga(action) {
   // yield means that these should be executed and we will wait for them to finish
-  yield localStorage.removeItem('token');
-  yield localStorage.removeItem('expirationTime');
-  yield localStorage.removeItem('localId');
+  // yield localStorage.removeItem('token');
+  // yield localStorage.removeItem('expirationTime');
+  // yield localStorage.removeItem('localId');
+  yield call([localStorage, 'removeItem'], "token"); //makes it testable I can mock and not execute
+  yield call([localStorage, 'removeItem'], 'expirationTime');
+  yield call([localStorage, 'removeItem'], 'localId');
   yield put(actions.logoutSucceed());
 }
 
