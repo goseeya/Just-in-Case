@@ -16,9 +16,11 @@ const iphoneCaseCreator = props => {
 
   const [purchasing, setPurchasing] = useState(false);
 
+  const { onInitType } = props;
+
   useEffect(() => {
-    props.onInitType();
-  }, []);
+    onInitType();
+  }, [onInitType]);
 
   const updatePurchaseState = (type) => {
     const purchaseableModels = ['iPhone6', 'iPhone7', 'iPhone8'];

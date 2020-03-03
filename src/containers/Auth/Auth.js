@@ -44,11 +44,13 @@ const auth = props => {
 
 const [isSignup,setIsSignup] = useState(true);
 
+const { creatingCase, authRedirectPath, onSetAuthRedirectPath } = props;
+
 useEffect(() => {
-  if (!props.creatingCase && props.authRedirectPath !== '/') {
-    props.onSetAuthRedirectPath();
+  if (!creatingCase && authRedirectPath !== '/') {
+    onSetAuthRedirectPath();
   }
-}, []);
+}, [creatingCase, authRedirectPath, onSetAuthRedirectPath]);
 
 
 
