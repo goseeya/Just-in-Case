@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './IphoneType.module.css';
 
-class IphoneType extends Component {
-  render() {
+const iphoneType = props => {
     let type = null;
 
-    switch (this.props.type) {
+    switch (props.type) {
       case ('iPhone6'):
         type = <div className={styles.Iphone6}><div className={styles.IphoneCameraHole}></div></div>;
         break;
@@ -24,11 +23,10 @@ class IphoneType extends Component {
         type = null;
     }
     return type;
-  }
 };
 
-IphoneType.propTypes = {
+iphoneType.propTypes = {
   type: PropTypes.string.isRequired
 }
 
-export default IphoneType;
+export default iphoneType;
