@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import React, { useState, useEffect, useCallback } from 'react';
+import { connect, useDispatch, useSelector } from 'react-redux';
 
 import Aux from '../../hoc/Aux/Aux';
 import IphoneCase from '../../components/IphoneCase/IphoneCase';
@@ -16,7 +16,24 @@ const iphoneCaseCreator = props => {
 
   const [purchasing, setPurchasing] = useState(false);
 
-  const { onInitType } = props;
+  const dispatch = useDispatch();
+  const useSelector = state => {
+    return ...
+  }
+
+  const tp = useSelector(state => {
+    return state.iPhoneCaseCreator.type
+  });
+  const prc = useSelector(state => state.iPhoneCaseCreator.price);
+  const error = useSelector(state => state.iPhoneCaseCreator.error);
+  const isAuthenticated = useSelector(state => state.auth.token);
+
+
+  const onTypeChanged = iType => useCallback(dispatch(actions.changeType(iType)), [dispatch]); // [] when it should rebuild
+  const onInitType = () => dispatch(actions.initType());
+  const onInitPurchase = () => dispatch(actions.purchaseInit());
+  const onSetAuthRedirectPath = (path) => dispatch(actions.setAuthRedirectPath(path));
+
 
   useEffect(() => {
     onInitType();
@@ -28,10 +45,10 @@ const iphoneCaseCreator = props => {
   }
 
   const purchaseHandler = () => {
-    if (props.isAuthenticated) {
+    if (isAuthenticated) {
       setPurchasing(true);
     } else {
-      props.onSetAuthRedirectPath('/checkout');
+      onSetAuthRedirectPath('/checkout');
       props.history.push('/auth');
     }
   }
@@ -41,30 +58,30 @@ const iphoneCaseCreator = props => {
   }
 
   const purchaseContinueHandler = () => {
-    props.onInitPurchase();
+    onInitPurchase();
     props.history.push('/checkout');
   }
 
     let orderSummary = null;
-    let iPhoneCase = props.error ? <p>Case can't be loaded</p> : <Spinner />;
+    let iPhoneCase = error ? <p>Case can't be loaded</p> : <Spinner />;
 
-    if (props.tp) {
+    if (tp) {
       iPhoneCase = (
         <Aux>
-          <IphoneCase type={props.tp} />
+          <IphoneCase type={tp} />
           <IphoneCaseControls
-            typeSelected={props.onTypeChanged}
-            checkedType={props.tp}
+            typeSelected={onTypeChanged}
+            checkedType={tp}
             ordered={purchaseHandler}
-            isAuth={props.isAuthenticated}
-            price={props.prc}
-            purchaseable={updatePurchaseState(props.tp)}
+            isAuth={isAuthenticated}
+            price={prc}
+            purchaseable={updatePurchaseState(tp)}
              />
         </Aux>
       );
       orderSummary = <OrderSummary
-        type={props.tp}
-        price={props.prc}
+        type={tp}
+        price={prc}
         purchaseCanceled={purchaseCancelHandler}
         purchaseContinued={purchaseContinueHandler} />;
     }
@@ -103,4 +120,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(iphoneCaseCreator, axios)); // we already pass props here
+export default withErrorHandler(iphoneCaseCreator, axios); // we already pass props here
