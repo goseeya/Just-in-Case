@@ -5,143 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87088938-d815-4d6b-a091-371ecc247fc4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.nvmrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eslintignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__tests__/FetchDevices.test.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__tests__/FirstTest.test.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/action-types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/auth/action-types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/auth/auth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/case-creator/action-types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/case-creator/case-creator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/common.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/devices/action-types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/devices/devices.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/order/action-types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/order/orders.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/IphoneCase/IphoneBoxOptional/IphoneBoxOptional.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/IphoneCase/IphoneCaseControls/IphoneCaseControls.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/constants.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/translations/nbTranslations-config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/translations/translationType.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Auth/Auth.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/IphoneCaseCreator/IphoneCaseCreator.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Orders/Orders.test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/declaration.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/loader/use-devices-loader.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/use-auth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/use-case-creator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/use-devices.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/use-is-authenticated.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/use-order.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/use-text.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/auth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/case-creator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/context.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/devices.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/loader/devices-loader.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/order.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/configure-store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/env.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/jest/cssTransform.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/jest/fileTransform.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/modules.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/paths.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/pnpTs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/webpack.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/webpackDevServer.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/build.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/start.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/axios-orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/axios-orders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IphoneCase/IphoneBoxOptional/IphoneBoxOptional.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IphoneCase/IphoneBoxOptional/IphoneBoxOptional.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IphoneCase/IphoneBoxOptional/IphoneBoxOptional.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/setupTests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IphoneCase/IphoneCase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IphoneCase/IphoneCase.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IphoneCase/IphoneCase.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IphoneCase/IphoneCase.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IphoneCase/IphoneCaseControls/IphoneCaseControl/IphoneCaseControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IphoneCase/IphoneCaseControls/IphoneCaseControl/IphoneCaseControl.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IphoneCase/IphoneCaseControls/IphoneCaseControl/IphoneCaseControl.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IphoneCase/IphoneCaseControls/IphoneCaseControl/IphoneCaseControl.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IphoneCase/IphoneCaseControls/IphoneCaseControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IphoneCase/IphoneCaseControls/IphoneCaseControls.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IphoneCase/IphoneCaseControls/IphoneCaseControls.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IphoneCase/IphoneCaseControls/IphoneCaseControls.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IphoneCase/IphoneType/IphoneType.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IphoneCase/IphoneType/IphoneType.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IphoneCase/IphoneType/IphoneType.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IphoneCase/IphoneType/IphoneType.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IphoneCase/OrderSummary/OrderSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IphoneCase/OrderSummary/OrderSummary.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Logo/Logo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Logo/Logo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Logo/Logo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Logo/Logo.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItem/NavigationItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItem/NavigationItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItem/NavigationItem.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItem/NavigationItem.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItems.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItems.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItems.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItems.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItems.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/SideDrawer/SideDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/SideDrawer/SideDrawer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/SideDrawer/SideDrawer.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/SideDrawer/SideDrawer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Toolbar/Menu/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Toolbar/Menu/Menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Toolbar/Menu/Menu.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Toolbar/Menu/Menu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Toolbar/Toolbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Toolbar/Toolbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Toolbar/Toolbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Toolbar/Toolbar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Order/CheckoutSummary/CheckoutSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Order/CheckoutSummary/CheckoutSummary.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Order/CheckoutSummary/CheckoutSummary.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Order/CheckoutSummary/CheckoutSummary.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Order/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Order/Order.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Order/Order.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Order/Order.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Backdrop/Backdrop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Backdrop/Backdrop.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Backdrop/Backdrop.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Backdrop/Backdrop.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Button/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Button/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Button/Button.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Button/Button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Input/Input.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Input/Input.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Input/Input.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Modal/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Modal/Modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Modal/Modal.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Modal/Modal.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Spinner/Spinner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Spinner/Spinner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Spinner/Spinner.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Spinner/Spinner.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Auth/Auth.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Auth/Auth.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Auth/Logout/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Auth/Logout/Logout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Checkout/Checkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Checkout/Checkout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Checkout/ContactData/ContactData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Checkout/ContactData/ContactData.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Checkout/ContactData/ContactData.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Checkout/ContactData/ContactData.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/IphoneCaseCreator/IphoneCaseCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/IphoneCaseCreator/IphoneCaseCreator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/IphoneCaseCreator/IphoneCaseCreator.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/IphoneCaseCreator/IphoneCaseCreator.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Orders/Orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Orders/Orders.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/Aux/Aux.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/Layout/Layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/Layout/Layout.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/Layout/Layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/asyncComponent/asyncComponent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/withErrorHandler/withErrorHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/withErrorHandler/withErrorHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/http-error-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/http-error-handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/utility.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/utility.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/actionTypes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/actions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/iPhoneCaseCreator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/order.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/auth.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/iPhoneCaseCreator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/order.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/order.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/sagas/auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/sagas/iPhoneCaseCreator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/sagas/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/sagas/order.js" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.npmrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +46,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/h804894/projects/Just-in-Case/src/hooks",
+    "last_opened_file_path": "/Users/h804894/projects/Just-in-Case",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -201,9 +66,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/hooks" />
       <recent name="$PROJECT_DIR$/src/actions/order" />
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/actions/creator" />
       <recent name="$PROJECT_DIR$/src/reducers" />
     </key>
@@ -242,7 +107,7 @@
       <workItem from="1723298337647" duration="6194000" />
       <workItem from="1723311574159" duration="15000" />
       <workItem from="1723311622926" duration="20625000" />
-      <workItem from="1723380204940" duration="52383000" />
+      <workItem from="1723380204940" duration="53202000" />
     </task>
     <servers />
   </component>
