@@ -1,15 +1,14 @@
 export const updateObject = (oldObject, updatedValues) => {
   return {
     ...oldObject,
-    ...updatedValues
+    ...updatedValues,
   };
 };
 
 export const checkValidity = (value, rules) => {
   let isValid = true;
 
-  // additional but not necessary
-  if (!rules) { 
+  if (!rules) {
     return true;
   }
 
@@ -26,16 +25,15 @@ export const checkValidity = (value, rules) => {
   }
 
   if (rules.isEmail) {
-     const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-     isValid = pattern.test(value) && isValid
-   }
+    const pattern =
+      /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    isValid = pattern.test(value) && isValid;
+  }
 
-   if (rules.isNumeric) {
-     const pattern = /^\d+$/;
-     isValid = pattern.test(value) && isValid
-   }
-
-  // TODO change it so that it wont check one after another
-
+  if (rules.isNumeric) {
+    const pattern = /^\d+$/;
+    isValid = pattern.test(value) && isValid;
+  }
+  
   return isValid;
-}
+};

@@ -1,6 +1,7 @@
 {
   "short_name": "Just in Case",
   "name": "Just in Case - iPhone personalized case generator",
+  "author": "Malgorzata Rakowska",
   "icons": [
     {
       "src": "iphone_case.jpg",

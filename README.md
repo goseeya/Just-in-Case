@@ -2,8 +2,6 @@
 
 Personalized iPhone case generator allowing you visualizing your creative minds and keep them always with you.
 
-Demo: https://just-in-case-generator.herokuapp.com/
-
 ## Getting Started
 
 ### `npm start`
@@ -37,5 +35,5 @@ Right now it lets you choose the iPhone type. Later it will let you choose the c
 
 ## Acknowledgments
 
-* This project was created because of the personal frustration of the author who could't find any iPhone case that matches all the needs of the author. 
+* This project was created because of the personal frustration of the author who could't find any iPhone case that matches all their needs. 
 * This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
