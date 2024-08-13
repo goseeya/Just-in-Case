@@ -1,13 +1,13 @@
 import { render, screen, waitFor} from '@testing-library/react'
 import { act } from 'react-dom/test-utils'
-import TestingAPICalls from '../components/TestingAPICalls'
-import * as services from '../utils/Services'
 
 const mockData = [
     {
         type: 'iPhone6'
     },
 ]
+
+const fetchDevices = jest.fn();
 
 test("Fetch Data API called", async () => {
 
